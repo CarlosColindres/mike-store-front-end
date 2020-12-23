@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.blur {
+    background-color: rgba(0, 0, 0, 0.5);
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+
+}
