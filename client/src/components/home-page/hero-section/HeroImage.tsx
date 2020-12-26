@@ -12,7 +12,7 @@ const HeroImage: FunctionComponent = () => {
 
     useEffect(() => {
         window.addEventListener('resize', windowSize)
-        return () => {
+      return () => {
             window.removeEventListener('resize', windowSize)
         }
     }, [])
