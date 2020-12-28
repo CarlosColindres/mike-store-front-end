@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 
 interface Props {
   mobileSidebar: () => void
- 
+  openLoginModal: () => void
 }
 
-export const Navbar: FunctionComponent <Props> = ({mobileSidebar}) => {
+export const Navbar: FunctionComponent <Props> = ({mobileSidebar, openLoginModal}) => {
   return (
     <header className='bg-white shadow-md'>
       <div className='container max-w-screen-2xl mx-auto px-4 justify-between flex'>
@@ -25,9 +25,12 @@ export const Navbar: FunctionComponent <Props> = ({mobileSidebar}) => {
           <a className='ml-4' href='/shop'>
             Women
           </a>
-          <a className='ml-4' href='/shop'>
-            Kids
-          </a>
+          <button className='ml-4'>
+            Join Us
+          </button>
+          <button onClick={openLoginModal} className='ml-4'>
+            Sign In <i className='fas fa-sign-in-alt'></i>
+          </button>
         </nav>
         <nav className='flex items-center'>
           <div className='w-12 rounded-full p-2 cursor-pointer hover:bg-gray-200'>

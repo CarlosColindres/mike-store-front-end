@@ -4,7 +4,7 @@ import { homepage } from '../../../data/homepage'
 const SalesAlertNotification: FunctionComponent = () => {
   const { sales } = homepage
     return (
-      <div className='bg-gray-200 py-2'>
+      <div className='bg-gray-100 py-2'>
         <div className='text-center'>
           <h2>{sales.title}</h2>
           <a
