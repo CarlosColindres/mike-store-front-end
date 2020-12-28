@@ -1,6 +1,7 @@
 import type { FunctionComponent } from 'react'
 
 const CartProduct: FunctionComponent = () => {
+
   return (
     <div>
       <div className='flex justify-between'>

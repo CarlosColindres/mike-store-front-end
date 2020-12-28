@@ -1,8 +1,10 @@
 import type {FunctionComponent} from 'react'
 const Footer: FunctionComponent = () => {
+    
     return (
         <div>
-            Footer
+            footer
+              
         </div>
     )
 }

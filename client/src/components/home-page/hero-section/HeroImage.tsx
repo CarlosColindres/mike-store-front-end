@@ -11,14 +11,15 @@ const HeroImage: FunctionComponent = () => {
     const windowSize = () => setwindowWidthSize( window.outerWidth)
 
     useEffect(() => {
-        window.addEventListener('resize', windowSize)
+      window.addEventListener('resize', windowSize)
+      
       return () => {
             window.removeEventListener('resize', windowSize)
         }
     }, [])
 
     return (
-      <div className='px-4 mb-8 container max-w-screen-2xl mx-auto'>
+      <section className='px-4 mb-8 container max-w-screen-2xl mx-auto'>
         {windowWidthSize <= 640 ? (
           <img className='w-full object-center' src={hero.img_mobile} alt='' />
         ) : (
@@ -35,7 +36,7 @@ const HeroImage: FunctionComponent = () => {
             </a>
           </div>
         </div>
-      </div>
+      </section>
     )
 }
 

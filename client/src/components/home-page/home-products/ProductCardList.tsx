@@ -5,7 +5,7 @@ const ProductCardList: FunctionComponent = () => {
 
     const { new_products } = homepage
     return (
-      <div className='container max-w-screen-2xl mx-auto px-4 grid gap-4 grid-cols-2 md:grid-cols-3 mb-8'>
+      <section className='container max-w-screen-2xl mx-auto px-4 grid gap-4 grid-cols-2 md:grid-cols-3 mb-8'>
         {new_products.map(item => (
           <ProductCard
             category={item.category}
@@ -15,7 +15,7 @@ const ProductCardList: FunctionComponent = () => {
             key={item.id}
           />
         ))}
-      </div>
+      </section>
     )
 }
 
