@@ -1,6 +1,12 @@
 import type { FunctionComponent } from 'react'
 
-const MobileSidebarModal: FunctionComponent = () => {
+interface Props {
+  openLoginModal: () => void
+}
+
+const MobileSidebarModal: FunctionComponent<Props> = ({
+  openLoginModal,
+}) => {
   return (
     <div className='fixed h-screen w-9/12 px-4 pt-8 bg-white z-10 left-1/4 '>
       <nav className='flex flex-col text-3xl mb-12'>
@@ -22,16 +28,14 @@ const MobileSidebarModal: FunctionComponent = () => {
         sport
       </p>
       <div className='mb-8'>
-        <a
-          className='px-6 py-2 bg-black text-white text-lg rounded-full border-solid border-black border-2'
-          href='/login'>
+        <button className='px-6 py-2 bg-black text-white text-lg rounded-full border-solid border-black border-2'>
           Join us
-        </a>
-        <a
-          className='px-6 py-2 bg-white text-black text-lg rounded-full border-solid border-black border-2 ml-4'
-          href='/signup'>
+        </button>
+        <button
+          onClick={openLoginModal}
+          className='px-6 py-2 bg-white text-black text-lg rounded-full border-solid border-black border-2 ml-4'>
           Sign In
-        </a>
+        </button>
       </div>
       <div>
         <div className='w-12 rounded-full p-2 cursor-pointer hover:bg-gray-200'>

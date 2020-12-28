@@ -14,14 +14,14 @@ const CategoryCard: FunctionComponent<Props> = ({
   img,
 }) => {
   return (
-    <div className='mb-8 md:width'>
-      <div>
-        <img className='object-cover' src={img} alt={title} />
+    <div className='mb-8 md:width relative'>
+      <div className='object-cover'>
+        <img className=' relative' src={img} alt={title} />
       </div>
-      <div className='-mt-24 ml-4'>
-        <h2 className='mb-4 text-lg font-semibold'>{title}</h2>
+      <div className='absolute bottom-6 left-4'>
+        <h2 className='mb-4 text-xl text-white font-semibold'>{title}</h2>
         <a
-          className='px-6 py-1 bg-black text-white text-lg rounded-full border-solid border-black border-2'
+          className='px-6 py-1 bg-white text-black text-lg rounded-full font-semibold'
           href={url}>
           {urlTitle}
         </a>
