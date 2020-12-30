@@ -63,10 +63,44 @@ export const homepage = {
       category: 'Basketball Shoe',
       price: '150',
     },
+  ],
+  products: [
+    {
+      id: 1,
+      img:
+        'https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/c355709a-660c-4ce9-a926-3e26c7ca944a/kd13-basketball-shoe-H6g10w.jpg',
+      name: 'KD13',
+      category: 'Basketball Shoe',
+      price: '150',
+    },
+    {
+      id: 2,
+      img:
+        'https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/6434f31a-34e3-4112-b0ed-a40bc2d1a18d/dbreak-type-womens-shoe-tswQLH.jpg',
+      name: 'KD13',
+      category: 'Basketball Shoe',
+      price: '150',
+    },
+    {
+      id: 3,
+      img:
+        'https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/06bf28f7-db0e-4c51-a958-08c8fcc78ea4/air-force-1-crater-womens-shoe-28NwmB.jpg',
+      name: 'KD13',
+      category: 'Basketball Shoe',
+      price: '150',
+    },
+    {
+      id: 4,
+      img:
+        'https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/6fbaf5b4-da10-458c-bb26-4a06f803eed5/challenger-og-mens-shoe-XjzHB1.jpg',
+      name: 'KD13',
+      category: 'Basketball Shoe',
+      price: '150',
+    },
     {
       id: 5,
       img:
-        'https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/89ffa207-343e-4c45-a082-ea266e95a132/air-force-1-1-big-kids-shoe-Mfz6x3.jpg',
+        'https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/c355709a-660c-4ce9-a926-3e26c7ca944a/kd13-basketball-shoe-H6g10w.jpg',
       name: 'KD13',
       category: 'Basketball Shoe',
       price: '150',
@@ -74,7 +108,55 @@ export const homepage = {
     {
       id: 6,
       img:
-        'https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/8ad4fb98-23ca-42b6-902b-a7e9451326d6/lebron-18-big-kids-basketball-shoe-3VWSb0.jpg',
+        'https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/6434f31a-34e3-4112-b0ed-a40bc2d1a18d/dbreak-type-womens-shoe-tswQLH.jpg',
+      name: 'KD13',
+      category: 'Basketball Shoe',
+      price: '150',
+    },
+    {
+      id: 7,
+      img:
+        'https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/06bf28f7-db0e-4c51-a958-08c8fcc78ea4/air-force-1-crater-womens-shoe-28NwmB.jpg',
+      name: 'KD13',
+      category: 'Basketball Shoe',
+      price: '150',
+    },
+    {
+      id: 8,
+      img:
+        'https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/6fbaf5b4-da10-458c-bb26-4a06f803eed5/challenger-og-mens-shoe-XjzHB1.jpg',
+      name: 'KD13',
+      category: 'Basketball Shoe',
+      price: '150',
+    },
+    {
+      id: 9,
+      img:
+        'https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/c355709a-660c-4ce9-a926-3e26c7ca944a/kd13-basketball-shoe-H6g10w.jpg',
+      name: 'KD13',
+      category: 'Basketball Shoe',
+      price: '150',
+    },
+    {
+      id: 10,
+      img:
+        'https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/6434f31a-34e3-4112-b0ed-a40bc2d1a18d/dbreak-type-womens-shoe-tswQLH.jpg',
+      name: 'KD13',
+      category: 'Basketball Shoe',
+      price: '150',
+    },
+    {
+      id: 11,
+      img:
+        'https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/06bf28f7-db0e-4c51-a958-08c8fcc78ea4/air-force-1-crater-womens-shoe-28NwmB.jpg',
+      name: 'KD13',
+      category: 'Basketball Shoe',
+      price: '150',
+    },
+    {
+      id: 12,
+      img:
+        'https://static.nike.com/a/images/f_auto/q_auto:eco/t_PDP_864_v1/6fbaf5b4-da10-458c-bb26-4a06f803eed5/challenger-og-mens-shoe-XjzHB1.jpg',
       name: 'KD13',
       category: 'Basketball Shoe',
       price: '150',
