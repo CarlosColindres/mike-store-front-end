@@ -1,5 +1,4 @@
 import type { FunctionComponent } from 'react'
-import {useState} from 'react'
 
 interface LoginProps {
   openRegisterModal: () => void
