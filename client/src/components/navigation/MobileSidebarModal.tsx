@@ -8,7 +8,7 @@ const MobileSidebarModal: FunctionComponent<Props> = ({
   openLoginModal,
 }) => {
   return (
-    <div className='fixed h-screen w-9/12 px-4 pt-8 bg-white z-10 left-1/4 '>
+    <div className='fixed h-screen w-9/12 px-4 pt-8 bg-white z-10 left-1/4'>
       <nav className='flex flex-col text-3xl mb-12'>
         <a className='mb-2' href='/shop'>
           New Realeases

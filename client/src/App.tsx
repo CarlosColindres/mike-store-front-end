@@ -36,7 +36,7 @@ const App: FunctionComponent = () => {
         <Login openLoginModal={openLoginModal} />
       </Modal>
 
-      <Navbar mobileSidebar={mobileSidebar} />
+      <Navbar mobileSidebar={mobileSidebar} openLoginModal={openLoginModal} />
       <Switch>
         <Route exact path='/cart' component={Cart} />
         <Route exact path='/' component={Home} />
