@@ -1,13 +1,13 @@
-import type {FunctionComponent} from 'react'
+import type { FunctionComponent } from 'react'
 
 interface Props {
-    name: string
-    img: string
-    price: string
-    category: string
+  name: string
+  img: string
+  price: string
+  category: string
 }
 
-const ProductCard: FunctionComponent<Props> = ({
+const CartProductCard: FunctionComponent<Props> = ({
   name,
   img,
   price,
@@ -15,7 +15,7 @@ const ProductCard: FunctionComponent<Props> = ({
 }) => {
   return (
     <div className='bg-gray-200'>
-      <img className='w-full object-cover' src={img} alt={name} />
+      <img src={img} alt={name} />
       <div className='p-2 flex justify-between'>
         <div className='text-left'>
           <h2 className='text-lg'>{name}</h2>
@@ -41,4 +41,4 @@ const ProductCard: FunctionComponent<Props> = ({
   )
 }
 
-export default ProductCard
+export default CartProductCard

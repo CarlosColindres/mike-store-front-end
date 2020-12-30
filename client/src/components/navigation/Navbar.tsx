@@ -4,9 +4,14 @@ import { Link } from 'react-router-dom'
 interface Props {
   mobileSidebar: () => void
   openLoginModal: () => void
+  openRegisterModal: () => void
 }
 
-export const Navbar: FunctionComponent <Props> = ({mobileSidebar, openLoginModal}) => {
+export const Navbar: FunctionComponent<Props> = ({
+  mobileSidebar,
+  openLoginModal,
+  openRegisterModal,
+}) => {
   return (
     <header className='bg-white shadow-md'>
       <div className='container max-w-screen-2xl mx-auto px-4 justify-between flex'>
@@ -25,7 +30,7 @@ export const Navbar: FunctionComponent <Props> = ({mobileSidebar, openLoginModal
           <a className='ml-4' href='/shop'>
             Women
           </a>
-          <button className='ml-4'>
+          <button onClick={openRegisterModal} className='ml-4'>
             Join Us
           </button>
           <button onClick={openLoginModal} className='ml-4'>

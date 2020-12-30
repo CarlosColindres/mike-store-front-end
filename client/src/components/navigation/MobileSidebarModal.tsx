@@ -2,10 +2,12 @@ import type { FunctionComponent } from 'react'
 
 interface Props {
   openLoginModal: () => void
+  openRegisterModal: () => void
 }
 
 const MobileSidebarModal: FunctionComponent<Props> = ({
   openLoginModal,
+  openRegisterModal,
 }) => {
   return (
     <div className='fixed h-screen w-9/12 px-4 pt-8 bg-white z-10 left-1/4'>
@@ -28,7 +30,9 @@ const MobileSidebarModal: FunctionComponent<Props> = ({
         sport
       </p>
       <div className='mb-8'>
-        <button className='px-6 py-2 bg-black text-white text-lg rounded-full border-solid border-black border-2'>
+        <button
+          onClick={openRegisterModal}
+          className='px-6 py-2 bg-black text-white text-lg rounded-full border-solid border-black border-2'>
           Join us
         </button>
         <button

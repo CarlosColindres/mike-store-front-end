@@ -3,7 +3,7 @@ import type { FunctionComponent } from 'react'
 const CartSummary: FunctionComponent = () => {
   return (
     <div>
-      <h2 className=' text-xl font-medium mt-8 mb-4 md:mt-0'>Summary</h2>
+      <h2 className=' text-2xl mt-8 mb-4 md:mt-0'>Summary</h2>
       <div className='flex justify-between text-lg mb-1'>
         <p>Subtotal</p>
         <p>$240</p>
