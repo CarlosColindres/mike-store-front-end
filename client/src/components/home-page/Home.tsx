@@ -8,7 +8,7 @@ import NewProductCarousel from './home-products/ProductCarousel'
 const Home: FunctionComponent = () => {
   const {new_categories, trending} = homepage
     return (
-      <div className='bg-gray-100'>
+      <div>
         <SalesAlertNotification />
         <HeroImage />
         <CategoryList

@@ -1,10 +1,12 @@
-import React from 'react'
+import type {FunctionComponent} from 'react'
+import ShopCardList from './ShopCardList'
 
-const Shop = () => {
+const Shop: FunctionComponent = () => {
     return (
-        <div>
-            shop
-        </div>
+      <div className='container max-w-screen-2xl mx-auto px-4'>
+        <h1 className='text-2xl my-8'>New Shoes</h1>
+        <ShopCardList />
+      </div>
     )
 }
 

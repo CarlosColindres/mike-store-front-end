@@ -8,10 +8,7 @@ const ProductCardList: FunctionComponent = () => {
       <section className='container max-w-screen-2xl mx-auto grid gap-4 grid-cols-2 md:grid-cols-4 mb-8'>
         {new_products.map(item => (
           <ProductCard
-            category={item.category}
-            name={item.name}
-            price={item.price}
-            img={item.img}
+            {...item}
             key={item.id}
           />
         ))}

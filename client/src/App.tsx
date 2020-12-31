@@ -10,6 +10,7 @@ import Login from './components/login-register/Login'
 import Modal from 'react-modal'
 import Register from './components/login-register/Register'
 import Shop from './components/shop/Shop'
+import ProductPage from './components/Product/ProductPage'
 
 const App: FunctionComponent = () => {
   const [sidebar, setSidebar] = useState(false)
@@ -26,7 +27,7 @@ const App: FunctionComponent = () => {
   }
   const closeModal = () => false
   return (
-    <div>
+    <div className='bg-white'>
       {sidebar ? (
         <div>
           <MobileSidebarOverlay mobileSidebar={mobileSidebar} />
@@ -59,6 +60,7 @@ const App: FunctionComponent = () => {
         openRegisterModal={openRegisterModal}
       />
       <Switch>
+        <Route exact path='/product/:id' component={ProductPage} />
         <Route exact path='/shop' component={Shop} />
         <Route exact path='/cart' component={Cart} />
         <Route exact path='/' component={Home} />

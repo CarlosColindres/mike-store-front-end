@@ -5,15 +5,15 @@ import ProductCard from './ProductCard'
 import { homepage } from '../../../data/homepage'
 const NewProductCarousel: FC = () => {
   return (
-    <Carousel swipeable={true} infiniteLoop={true}>
+    <Carousel
+      swipeable={true}
+      infiniteLoop={true}
+      autoPlay={true}
+      emulateTouch={true}
+      
+    >
       {homepage.new_products.map(item => (
-        <ProductCard
-          category={item.category}
-          name={item.name}
-          price={item.price}
-          img={item.img}
-          key={item.id}
-        />
+        <ProductCard {...item} key={item.id} />
       ))}
     </Carousel>
   )
