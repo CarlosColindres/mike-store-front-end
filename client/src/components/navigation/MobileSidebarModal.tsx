@@ -1,13 +1,21 @@
 import type { FunctionComponent } from 'react'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
+import { ReduxStoreInterface } from '../../interfaces/reduxStoreInterfaces'
 
 //actions 
-import {toggleRegisterModal, toggleLoginModal} from '../../redux/actions/modalStateActions'
+import {toggleRegisterModal, toggleLoginModal, toggleSidebar} from '../../redux/actions/modalStateActions'
 
-const MobileSidebarModal: FunctionComponent= () => {
+const MobileSidebarModal: FunctionComponent = () => {
+  const {cartLength} = useSelector((state: ReduxStoreInterface) => state.cart)
+
   const dispatch = useDispatch()
   return (
-    <div className='fixed h-screen w-9/12 px-4 pt-8 bg-white z-10 left-1/4'>
+    <div className='fixed h-screen w-9/12 px-6 pt-8 bg-white z-10 left-1/4'>
+      <div
+        onClick={() => dispatch(toggleSidebar())}
+        className='absolute text-2xl top-3 right-5 cursor-pointer'>
+        <i className='fas fa-times'></i>
+      </div>
       <nav className='flex flex-col text-3xl mb-12'>
         <a className='mb-2' href='/shop'>
           New Realeases
@@ -53,7 +61,7 @@ const MobileSidebarModal: FunctionComponent= () => {
             />
           </svg>
           <span className='absolute -mt-5 ml-3 text-xs text-black font-bold'>
-            2
+            {cartLength}
           </span>
         </div>
         <div className='w-12 rounded-full p-2 cursor-pointer hover:bg-gray-200'>

@@ -15,7 +15,7 @@ const CategoryList: FunctionComponent<Props> = ({ title, categories }) => {
   return (
     <section className='container max-w-screen-2xl mx-auto px-4'>
       <h2 className='text-2xl font-semibold mb-6'>{title}</h2>
-      <div className='md:flex md:justify-between'>
+      <div className='sm:flex md:justify-between'>
         {categories.map((item, idx) => (
           <CategoryCard
             key={idx}

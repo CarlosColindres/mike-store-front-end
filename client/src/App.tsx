@@ -12,7 +12,6 @@ import Register from './components/login-register/Register'
 import Shop from './components/shop/Shop'
 import ProductPage from './components/Product/ProductPage'
 import { Navbar } from './components/navigation/Navbar'
-import MobileSidebarOverlay from './components/navigation/MobileSidebarOverlay'
 import MobileSidebarModal from './components/navigation/MobileSidebarModal'
 
 const App: FunctionComponent = () => {
@@ -20,30 +19,23 @@ const App: FunctionComponent = () => {
  
   return (
     <div className='bg-white'>
-      {sidebar ? (
-        <div>
-          <MobileSidebarOverlay/>
-          <MobileSidebarModal/>
-        </div>
-      ) : (
-        ''
-      )}
+      {sidebar && <MobileSidebarModal />}
 
       <Modal
         isOpen={loginModal}
         onRequestClose={() => false}
         className='w-screen h-screen flex justify-center items-center'>
-        <Login/>
+        <Login />
       </Modal>
 
       <Modal
         isOpen={registerModal}
         onRequestClose={() => false}
         className='w-screen h-screen flex justify-center items-center'>
-        <Register/>
+        <Register />
       </Modal>
-      
-      <Navbar/>
+
+      <Navbar />
       <Switch>
         <Route exact path='/product/:id' component={ProductPage} />
         <Route exact path='/shop' component={Shop} />

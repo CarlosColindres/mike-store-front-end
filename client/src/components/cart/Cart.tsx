@@ -1,4 +1,7 @@
 import type { FunctionComponent } from 'react'
+import {useSelector} from 'react-redux'
+import {ReduxStoreInterface} from '../../interfaces/reduxStoreInterfaces'
+//components
 import ProductCardList from '../home-page/home-products/ProductCardList'
 import SuggestionsCarousel from './cart-carousel/SuggestionsCarousel'
 import CartProduct from './CartProduct'
@@ -6,6 +9,7 @@ import CartSummary from './CartSummary'
 import IsMember from './IsMember'
 
 const Cart: FunctionComponent = () => {
+  const {cart, cartLength} = useSelector((state: ReduxStoreInterface) => state.cart)
   return (
     <div className='mt-8 container max-w-screen-2xl mx-auto px-4 '>
       <div className='md:flex md:justify-between'>
@@ -13,9 +17,12 @@ const Cart: FunctionComponent = () => {
           <IsMember />
           <h2 className='text-center text-2xl my-8'>Bag</h2>
           <hr />
-          <CartProduct />
-          <CartProduct />
-          <CartProduct />
+          {cartLength === 0 && (
+            <p className='text-lg mt-4'>There are no items in your bag</p>
+          )}
+          {cart.map(item => (
+            <CartProduct {...item} />
+          ))}
         </div>
         <div className='md:w-4/12'>
           <CartSummary />
@@ -26,7 +33,7 @@ const Cart: FunctionComponent = () => {
         <SuggestionsCarousel />
       </div>
       <div className='hidden sm:block'>
-        <ProductCardList/>
+        <ProductCardList />
       </div>
     </div>
   )

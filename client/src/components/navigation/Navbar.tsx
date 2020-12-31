@@ -1,19 +1,22 @@
 import type { FunctionComponent } from 'react'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import { Link } from 'react-router-dom'
+import {ReduxStoreInterface} from '../../interfaces/reduxStoreInterfaces'
+
 //actions
 import {toggleLoginModal, toggleRegisterModal, toggleSidebar} from '../../redux/actions/modalStateActions'
 
 
 
 export const Navbar: FunctionComponent = () => {
+  const {cartLength} = useSelector((state: ReduxStoreInterface) => state.cart)
   const dispatch = useDispatch()
   return (
     <header className='bg-white shadow-md'>
       <div className='container max-w-screen-2xl mx-auto px-4 justify-between flex'>
         <div>
           <Link to='/'>
-            <svg height='60px' width='60px' fill='#111' viewBox='0 0 69 32'>
+            <svg className='fill-current' height='60px' width='60px' fill='#111' viewBox='0 0 69 32'>
               <path d='M68.56 4L18.4 25.36Q12.16 28 7.92 28q-4.8 0-6.96-3.36-1.36-2.16-.8-5.48t2.96-7.08q2-3.04 6.56-8-1.6 2.56-2.24 5.28-1.2 5.12 2.16 7.52Q11.2 18 14 18q2.24 0 5.04-.72z'></path>
             </svg>
           </Link>
@@ -63,7 +66,7 @@ export const Navbar: FunctionComponent = () => {
                 />
               </svg>
               <span className='absolute -mt-5 ml-3 text-xs text-black font-bold'>
-                1
+                {cartLength}
               </span>
             </Link>
           </div>
