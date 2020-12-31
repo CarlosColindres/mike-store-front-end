@@ -1,10 +1,11 @@
-import type {FunctionComponent} from 'react'
-
+import type { FunctionComponent } from 'react'
+import { useHistory } from 'react-router-dom'
 interface Props {
-    name: string
-    img: string
-    price: string
-    category: string
+  name: string
+  img: string
+  price: string
+  category: string
+  id: number
 }
 
 const ProductCard: FunctionComponent<Props> = ({
@@ -12,29 +13,24 @@ const ProductCard: FunctionComponent<Props> = ({
   img,
   price,
   category,
+  id,
 }) => {
+  const { push } = useHistory()
+
   return (
-    <div className='bg-gray-200'>
-      <img className='w-full object-cover' src={img} alt={name} />
-      <div className='p-2 flex justify-between'>
+    <div onClick={() => push(`/product/${id}`)} className=' bg-white'>
+      <img
+        className='w-full object-cover cursor-pointer'
+        src={img}
+        alt={name}
+      />
+      <div className='p-4 flex justify-between'>
         <div className='text-left'>
           <h2 className='text-lg'>{name}</h2>
           <p className='text-gray-500'>{category}</p>
-          <p className='text-lg'>${price}</p>
         </div>
-        <div className='w-12 rounded-full p-2 ml-1 cursor-pointer hover:bg-gray-200'>
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            fill='none'
-            viewBox='0 0 24 24'
-            stroke='currentColor'>
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              strokeWidth={1.5}
-              d='M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z'
-            />
-          </svg>
+        <div className='w-12 p-2'>
+          <p className='text-lg'>${price}</p>
         </div>
       </div>
     </div>
