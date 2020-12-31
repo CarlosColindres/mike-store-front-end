@@ -1,14 +1,11 @@
 import type { FunctionComponent } from 'react'
+import {useDispatch} from 'react-redux'
 
-interface Props {
-  openLoginModal: () => void
-  openRegisterModal: () => void
-}
+//actions 
+import {toggleRegisterModal, toggleLoginModal} from '../../redux/actions/modalStateActions'
 
-const MobileSidebarModal: FunctionComponent<Props> = ({
-  openLoginModal,
-  openRegisterModal,
-}) => {
+const MobileSidebarModal: FunctionComponent= () => {
+  const dispatch = useDispatch()
   return (
     <div className='fixed h-screen w-9/12 px-4 pt-8 bg-white z-10 left-1/4'>
       <nav className='flex flex-col text-3xl mb-12'>
@@ -31,12 +28,12 @@ const MobileSidebarModal: FunctionComponent<Props> = ({
       </p>
       <div className='mb-8'>
         <button
-          onClick={openRegisterModal}
+          onClick={() => dispatch(toggleRegisterModal())}
           className='px-6 py-2 bg-black text-white text-lg rounded-full border-solid border-black border-2'>
           Join us
         </button>
         <button
-          onClick={openLoginModal}
+          onClick={() => dispatch(toggleLoginModal())}
           className='px-6 py-2 bg-white text-black text-lg rounded-full border-solid border-black border-2 ml-4'>
           Sign In
         </button>

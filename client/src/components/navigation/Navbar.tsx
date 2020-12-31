@@ -1,17 +1,13 @@
 import type { FunctionComponent } from 'react'
+import {useDispatch} from 'react-redux'
 import { Link } from 'react-router-dom'
+//actions
+import {toggleLoginModal, toggleRegisterModal, toggleSidebar} from '../../redux/actions/modalStateActions'
 
-interface Props {
-  mobileSidebar: () => void
-  openLoginModal: () => void
-  openRegisterModal: () => void
-}
 
-export const Navbar: FunctionComponent<Props> = ({
-  mobileSidebar,
-  openLoginModal,
-  openRegisterModal,
-}) => {
+
+export const Navbar: FunctionComponent = () => {
+  const dispatch = useDispatch()
   return (
     <header className='bg-white shadow-md'>
       <div className='container max-w-screen-2xl mx-auto px-4 justify-between flex'>
@@ -23,17 +19,17 @@ export const Navbar: FunctionComponent<Props> = ({
           </Link>
         </div>
         <nav className='hidden md:flex items-center text-lg'>
-          <a href='/shop'>New Realeases</a>
-          <a className='ml-4' href='/shop'>
+          <Link to='/shop'>New Realeases</Link>
+          <Link className='ml-4' to='/shop'>
             Men
-          </a>
-          <a className='ml-4' href='/shop'>
+          </Link>
+          <Link className='ml-4' to='/shop'>
             Women
-          </a>
-          <button onClick={openRegisterModal} className='ml-4'>
+          </Link>
+          <button onClick={() => dispatch(toggleRegisterModal())} className='ml-4'>
             Join Us
           </button>
-          <button onClick={openLoginModal} className='ml-4'>
+          <button onClick={() => dispatch(toggleLoginModal())} className='ml-4'>
             Sign In <i className='fas fa-sign-in-alt'></i>
           </button>
         </nav>
@@ -72,7 +68,7 @@ export const Navbar: FunctionComponent<Props> = ({
             </Link>
           </div>
           <div
-            onClick={mobileSidebar}
+            onClick={() => dispatch(toggleSidebar())}
             className='w-12 rounded-full p-2 ml-1 cursor-pointer hover:bg-gray-200 md:hidden'>
             <svg
               xmlns='http://www.w3.org/2000/svg'

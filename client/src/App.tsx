@@ -1,9 +1,9 @@
-import { useState } from 'react'
 import type { FunctionComponent } from 'react'
-import { Navbar } from './components/navigation/Navbar'
-import MobileSidebarOverlay from './components/navigation/MobileSidebarOverlay'
-import MobileSidebarModal from './components/navigation/MobileSidebarModal'
 import { Route, Switch } from 'react-router-dom'
+import {useSelector} from 'react-redux'
+import type {ReduxStoreInterface} from './interfaces/reduxStoreInterfaces'
+
+//components
 import Home from './components/home-page/Home'
 import Cart from './components/cart/Cart'
 import Login from './components/login-register/Login'
@@ -11,30 +11,19 @@ import Modal from 'react-modal'
 import Register from './components/login-register/Register'
 import Shop from './components/shop/Shop'
 import ProductPage from './components/Product/ProductPage'
+import { Navbar } from './components/navigation/Navbar'
+import MobileSidebarOverlay from './components/navigation/MobileSidebarOverlay'
+import MobileSidebarModal from './components/navigation/MobileSidebarModal'
 
 const App: FunctionComponent = () => {
-  const [sidebar, setSidebar] = useState(false)
-  const [loginModal, setLoginModal] = useState(false)
-  const [registerModal, setRegisterModal] = useState(false)
-  const openRegisterModal = () => {
-    setSidebar(false)
-    setRegisterModal(!registerModal)
-  }
-  const mobileSidebar = () => setSidebar(!sidebar)
-  const openLoginModal = () => {
-    setSidebar(false)
-    setLoginModal(!loginModal)
-  }
-  const closeModal = () => false
+  const {sidebar, loginModal, registerModal } = useSelector((state: ReduxStoreInterface) => state.modalState)
+ 
   return (
     <div className='bg-white'>
       {sidebar ? (
         <div>
-          <MobileSidebarOverlay mobileSidebar={mobileSidebar} />
-          <MobileSidebarModal
-            openLoginModal={openLoginModal}
-            openRegisterModal={openRegisterModal}
-          />
+          <MobileSidebarOverlay/>
+          <MobileSidebarModal/>
         </div>
       ) : (
         ''
@@ -42,23 +31,19 @@ const App: FunctionComponent = () => {
 
       <Modal
         isOpen={loginModal}
-        onRequestClose={closeModal}
+        onRequestClose={() => false}
         className='w-screen h-screen flex justify-center items-center'>
-        <Login openLoginModal={openLoginModal} />
+        <Login/>
       </Modal>
 
       <Modal
         isOpen={registerModal}
-        onRequestClose={closeModal}
+        onRequestClose={() => false}
         className='w-screen h-screen flex justify-center items-center'>
-        <Register openRegisterModal={openRegisterModal} />
+        <Register/>
       </Modal>
-
-      <Navbar
-        mobileSidebar={mobileSidebar}
-        openLoginModal={openLoginModal}
-        openRegisterModal={openRegisterModal}
-      />
+      
+      <Navbar/>
       <Switch>
         <Route exact path='/product/:id' component={ProductPage} />
         <Route exact path='/shop' component={Shop} />

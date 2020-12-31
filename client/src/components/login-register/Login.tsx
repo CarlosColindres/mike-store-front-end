@@ -1,13 +1,14 @@
 import type { FunctionComponent } from 'react'
+import {useDispatch} from 'react-redux'
 
-interface LoginProps {
-  openLoginModal: () => void
-}
+//actions
+import {toggleLoginModal} from '../../redux/actions/modalStateActions'
 
-const Login: FunctionComponent<LoginProps> = ({ openLoginModal }) => {
+const Login: FunctionComponent = () => {
+  const dispatch = useDispatch()
   return (
     <div className='bg-gray-100 relative flex flex-col justify-center items-center px-10 rounded-lg modal'>
-      <div onClick={openLoginModal} className='absolute text-2xl top-3 right-5 cursor-pointer'>
+      <div onClick={() => dispatch(toggleLoginModal())} className='absolute text-2xl top-3 right-5 cursor-pointer'>
         <i className='fas fa-times'></i>
       </div>
       <div className='text-center font-semibold text-3xl mb-8 '>

@@ -1,23 +1,14 @@
 import type { FunctionComponent } from 'react'
+import {useDispatch} from 'react-redux'
 
-interface Props {
-  mobileSidebar?: () => void
-  registration?: () => void
-}
+//actions
+import {toggleSidebar} from '../../redux/actions/modalStateActions'
 
-const MobileSidebarOverlay: FunctionComponent<Props> = ({
-  mobileSidebar,
-  registration,
-}) => {
+const MobileSidebarOverlay: FunctionComponent = () => {
+  const dispatch = useDispatch()
   return (
     <div
-      onClick={() => {
-        if (mobileSidebar) {
-          mobileSidebar()
-        } else if (registration) {
-          registration()
-        }
-      }}
+      onClick={() => dispatch(toggleSidebar())}
       className='fixed h-screen w-screen blur'></div>
   )
 }

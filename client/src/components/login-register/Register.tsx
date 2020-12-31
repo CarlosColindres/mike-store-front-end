@@ -1,14 +1,15 @@
 import type { FunctionComponent } from 'react'
+import {useDispatch} from 'react-redux'
 
-interface LoginProps {
-  openRegisterModal: () => void
-}
+//actions
+import {toggleRegisterModal} from '../../redux/actions/modalStateActions'
 
-const Register: FunctionComponent<LoginProps> = ({ openRegisterModal }) => {
+const Register: FunctionComponent = () => {
+  const dispatch = useDispatch()
   return (
     <div className='bg-gray-100 relative flex flex-col justify-center items-center px-10 rounded-lg register-modal'>
       <div
-        onClick={openRegisterModal}
+        onClick={() => dispatch(toggleRegisterModal())}
         className='absolute text-2xl top-3 right-5 cursor-pointer'>
         <i className='fas fa-times'></i>
       </div>
