@@ -1,5 +1,5 @@
 import type { FunctionComponent } from 'react'
-import { homepage } from '../../../data/homepage'
+import { homepage } from '../../interfaces/data/homepage'
 
 const SalesAlertNotification: FunctionComponent = () => {
   const { sales } = homepage

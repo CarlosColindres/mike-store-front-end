@@ -1,10 +1,10 @@
-import type {FunctionComponent} from 'react'
+import type { FunctionComponent } from 'react'
+
 const Footer: FunctionComponent = () => {
     
     return (
         <div>
-            footer
-              
+            footer   
         </div>
     )
 }

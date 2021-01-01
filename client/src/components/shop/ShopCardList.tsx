@@ -1,6 +1,6 @@
 import type { FunctionComponent} from 'react'
-import {homepage} from '../../data/homepage'
-import ProductCard from '../home-page/home-products/ProductCard'
+import {homepage} from '../../interfaces/data/homepage'
+import ProductCard from '../home-products/ProductCard'
 const ShopCardList: FunctionComponent = () => {
     const {products} = homepage
     return (

@@ -2,14 +2,14 @@ import type { FunctionComponent } from 'react'
 import {useSelector} from 'react-redux'
 import {ReduxStoreInterface} from '../../interfaces/reduxStoreInterfaces'
 //components
-import ProductCardList from '../home-page/home-products/ProductCardList'
-import SuggestionsCarousel from './cart-carousel/SuggestionsCarousel'
+import ProductCardList from '../home-products/ProductCardList'
+import SuggestionsCarousel from './SuggestionsCarousel'
 import CartProduct from './CartProduct'
 import CartSummary from './CartSummary'
 import IsMember from './IsMember'
 
 const Cart: FunctionComponent = () => {
-  const {cart, cartLength} = useSelector((state: ReduxStoreInterface) => state.cart)
+  const { cart, cartLength } = useSelector((state: ReduxStoreInterface) => state.cart)
   return (
     <div className='mt-8 container max-w-screen-2xl mx-auto px-4 '>
       <div className='md:flex md:justify-between'>

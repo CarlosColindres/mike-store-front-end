@@ -1,10 +1,10 @@
 import type {FunctionComponent} from 'react'
 import CategoryList from './categories/CategoryList'
 import HeroImage from './hero-section/HeroImage'
-import { homepage } from './../../data/homepage'
-import ProductCardList from './home-products/ProductCardList'
-import SalesAlertNotification from './sales-alerts/SalesAlertNotification'
-import NewProductCarousel from './home-products/ProductCarousel'
+import { homepage } from '../../interfaces/data/homepage'
+import ProductCardList from '../home-products/ProductCardList'
+import SalesAlertNotification from '../sales-alerts/SalesAlertNotification'
+import NewProductCarousel from '../home-products/ProductCarousel'
 const Home: FunctionComponent = () => {
   const {new_categories, trending} = homepage
     return (

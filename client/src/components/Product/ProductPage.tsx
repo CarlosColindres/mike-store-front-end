@@ -1,6 +1,6 @@
 import type {FunctionComponent} from 'react'
-import SuggestionsCarousel from '../cart/cart-carousel/SuggestionsCarousel'
-import ProductCardList from '../home-page/home-products/ProductCardList'
+import SuggestionsCarousel from '../cart/SuggestionsCarousel'
+import ProductCardList from '../home-products/ProductCardList'
 import ProductDisplay from './ProductDisplay'
 import ProductInformation from './ProductInformation'
 

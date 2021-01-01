@@ -14,10 +14,15 @@ const ProductDisplay: FunctionComponent = () => {
       swipeable={true}
       infiniteLoop={true}
       autoPlay={true}
-          emulateTouch={true}
-          renderThumbs={() => images.map((image, idx) => <img key={idx} src={ image} alt='nike shoe'/>)}
-      >
-          {images.map((image, idx) => <ProductDisplayImages key={idx} image= {image}/>)}
+      emulateTouch={true}
+      renderThumbs={() =>
+        images.map((image, idx) => (
+          <img key={idx} src={image} alt='nike shoe' />
+        ))
+      }>
+      {images.map((image, idx) => (
+        <ProductDisplayImages key={idx} image={image} />
+      ))}
     </Carousel>
   )
 }

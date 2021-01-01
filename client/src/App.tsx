@@ -13,6 +13,7 @@ import Shop from './components/shop/Shop'
 import ProductPage from './components/Product/ProductPage'
 import { Navbar } from './components/navigation/Navbar'
 import MobileSidebarModal from './components/navigation/MobileSidebarModal'
+import Checkout from './components/checkout/Checkout'
 
 const App: FunctionComponent = () => {
   const {sidebar, loginModal, registerModal } = useSelector((state: ReduxStoreInterface) => state.modalState)
@@ -37,6 +38,7 @@ const App: FunctionComponent = () => {
 
       <Navbar />
       <Switch>
+        <Route exact path='/checkout' component={Checkout} />
         <Route exact path='/product/:id' component={ProductPage} />
         <Route exact path='/shop' component={Shop} />
         <Route exact path='/cart' component={Cart} />
