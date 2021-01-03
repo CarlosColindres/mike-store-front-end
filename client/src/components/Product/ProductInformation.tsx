@@ -1,11 +1,14 @@
 import type { FunctionComponent } from 'react'
+import type {ReduxStoreInterface, ProductCart} from '../../interfaces/reduxStoreInterfaces'
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+
 
 //actions
 import { addToCart } from '../../redux/actions/cartStateActions'
 const ProductInformation: FunctionComponent = () => {
   const dispatch = useDispatch()
+  const { cart, cartLength } = useSelector((state: ReduxStoreInterface) => state.cart)
   const [shoesize, setShoesize] = useState('')
   const onChange = (e: any) => {
     const { value } = e.target
@@ -20,6 +23,15 @@ const ProductInformation: FunctionComponent = () => {
     price: 130,
     category: "Men's Running Shoe",
   }
+  const addToLocalStorage = (previousCartState: ProductCart[], previousCartLength: number, newCartItem: {}) => {
+    const updatedCart = [...previousCartState, newCartItem]
+    const updatedCartLength = previousCartLength + 1
+
+    localStorage.setItem('cart', JSON.stringify(updatedCart))
+    localStorage.setItem('cartLength', JSON.stringify(updatedCartLength))
+    
+    dispatch(addToCart({ ...newItem, id: Math.random() }))
+  }
   return (
     <div className='md:w-5/12'>
       <p className='text-gray-500'>Men's Running Shoe</p>
@@ -32,8 +44,7 @@ const ProductInformation: FunctionComponent = () => {
         <option value='10'>10</option>
       </select>
       <button
-        onClick={() => dispatch(addToCart({ ...newItem, id: Math.random()}))}
-        className='bg-black rounded-full text-white my-6 py-4 w-full'>
+        onClick={() => addToLocalStorage(cart,cartLength,newItem)} className='bg-black rounded-full text-white my-6 py-4 w-full'>
         Add To Bag
       </button>
       <p>
