@@ -9,7 +9,10 @@ const SuggestionsCarousel: FC = () => {
       swipeable={true}
       infiniteLoop={true}
       autoPlay={true}
-      emulateTouch={true}>
+      emulateTouch={true}
+      showThumbs={false}
+    >
+      
       {homepage.new_products.map(item => (
         <ProductCard
           {...item}
