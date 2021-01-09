@@ -20,7 +20,8 @@ const ProductCard: FunctionComponent<Props> = ({
   return (
     <div onClick={() => push(`/product/${id}`)} className=' bg-white'>
       <img
-        className='w-full object-cover cursor-pointer'
+        className='w-full object-cover cursor-pointer transform ease-in-out duration-500
+         hover:scale-105'
         src={img}
         alt={name}
       />
@@ -28,8 +29,6 @@ const ProductCard: FunctionComponent<Props> = ({
         <div className='text-left'>
           <h2 className='text-lg'>{name}</h2>
           <p className='text-gray-500'>{category}</p>
-        </div>
-        <div className='w-12 p-2'>
           <p className='text-lg'>${price}</p>
         </div>
       </div>

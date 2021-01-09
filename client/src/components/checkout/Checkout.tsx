@@ -7,6 +7,7 @@ import DeliveryOptionsForm from './DeliveryOptionsForm'
 import InTheBag from './InTheBag'
 import OrderReview from './OrderReview'
 import Payment from './Payment'
+import PaymentForm from './PaymentForm'
 import TotalSummary from './TotalSummary'
 const Checkout: FunctionComponent = () => {
   const { cartLength } = useSelector((state: ReduxStoreInterface) => state.cart)
@@ -29,6 +30,7 @@ const Checkout: FunctionComponent = () => {
           <DeliveryOptions />
           <DeliveryOptionsForm />
           <Payment />
+          <PaymentForm/>
           <OrderReview />
         </div>
       </div>
