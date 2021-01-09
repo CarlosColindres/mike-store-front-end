@@ -19,10 +19,13 @@ const stateToUse = localStorageValues ? JSON.parse(localStorageValues) : initial
 const DeliveryOptionsForm: FunctionComponent = () => {
   
   const [deliveryForm, setDeliveryForm, onChange] = FormhandlerHook(stateToUse)
-  
+  const handleSubmit = (e: any) => {
+    e.preventvalue()
+    setDeliveryForm(stateToUse)
+  }
   return (
     <div className='px-4'>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className='sm:flex sm:justify-between mb-4'>
           <input
             className='block bg-gray-100 border-t border-b border-l border-r border-black rounded-sm p-2 w-full width sm:mr-2 mb-4 sm:mb-0'
