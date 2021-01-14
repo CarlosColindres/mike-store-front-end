@@ -1,7 +1,7 @@
 import type { FunctionComponent } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import {useSelector} from 'react-redux'
-import type {ReduxStoreInterface} from './interfaces/reduxStoreInterfaces'
+import { useSelector } from 'react-redux'
+import type { ReduxStoreInterface } from './interfaces/reduxStoreInterfaces'
 
 //components
 import Home from './components/home-page/Home'
@@ -16,8 +16,10 @@ import MobileSidebarModal from './components/navigation/MobileSidebarModal'
 import Checkout from './components/checkout/Checkout'
 
 const App: FunctionComponent = () => {
-  const {sidebar, loginModal, registerModal } = useSelector((state: ReduxStoreInterface) => state.modalState)
- 
+  const { sidebar, loginModal, registerModal } = useSelector(
+    (state: ReduxStoreInterface) => state.modalState
+  )
+
   return (
     <div className='bg-white'>
       {sidebar && <MobileSidebarModal />}
@@ -40,7 +42,7 @@ const App: FunctionComponent = () => {
       <Switch>
         <Route exact path='/checkout' component={Checkout} />
         <Route exact path='/product/:id' component={ProductPage} />
-        <Route exact path='/shop' component={Shop} />
+        <Route exact path='/shop/:category' component={Shop} />
         <Route exact path='/cart' component={Cart} />
         <Route exact path='/' component={Home} />
       </Switch>

@@ -22,11 +22,10 @@ export const Navbar: FunctionComponent = () => {
           </Link>
         </div>
         <nav className='hidden md:flex items-center text-lg'>
-          <Link to='/shop'>New Realeases</Link>
-          <Link className='ml-4' to='/shop'>
+          <Link className='ml-4' to='/shop/men'>
             Men
           </Link>
-          <Link className='ml-4' to='/shop'>
+          <Link className='ml-4' to='/shop/women'>
             Women
           </Link>
           <button onClick={() => dispatch(toggleRegisterModal())} className='ml-4'>

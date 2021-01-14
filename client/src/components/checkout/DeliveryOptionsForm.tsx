@@ -22,6 +22,7 @@ const DeliveryOptionsForm: FunctionComponent = () => {
   const handleSubmit = (e: any) => {
     e.preventvalue()
     setDeliveryForm(stateToUse)
+    
   }
   return (
     <div className='px-4'>

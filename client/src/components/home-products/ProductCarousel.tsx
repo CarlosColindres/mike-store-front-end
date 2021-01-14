@@ -10,12 +10,7 @@ const NewProductCarousel: FC = () => {
       infiniteLoop={true}
       autoPlay={true}
       emulateTouch={true}
-      showThumbs={false}
-    >
-      {homepage.new_products.map(item => (
-        <ProductCard {...item} key={item.id} />
-      ))}
-    </Carousel>
+      showThumbs={false}></Carousel>
   )
 }
 

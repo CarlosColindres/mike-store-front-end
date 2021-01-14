@@ -6,12 +6,7 @@ const ProductCardList: FunctionComponent = () => {
     const { new_products } = homepage
     return (
       <section className='container max-w-screen-2xl mx-auto grid gap-4 grid-cols-2 md:grid-cols-4 mb-8'>
-        {new_products.map(item => (
-          <ProductCard
-            {...item}
-            key={item.id}
-          />
-        ))}
+      
       </section>
     )
 }

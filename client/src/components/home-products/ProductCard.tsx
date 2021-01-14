@@ -1,36 +1,38 @@
 import type { FunctionComponent } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 interface Props {
   name: string
-  img: string
-  price: string
+  image: string
+  price: number
   category: string
-  id: number
+  _id: number
 }
 
 const ProductCard: FunctionComponent<Props> = ({
   name,
-  img,
+  image,
   price,
   category,
-  id,
+  _id,
 }) => {
   const { push } = useHistory()
 
   return (
-    <div onClick={() => push(`/product/${id}`)} className=' bg-white'>
+    <div className=' bg-white overflow-hidden'>
       <img
-        className='w-full object-cover cursor-pointer transform ease-in-out duration-500
+        onClick={() => push(`/product/${_id}`)}
+        className='w-full object-cover cursor-pointer transform duration-500
          hover:scale-105'
-        src={img}
+        src={image}
         alt={name}
       />
       <div className='p-4 flex justify-between'>
         <div className='text-left'>
-          <h2 className='text-lg'>{name}</h2>
-          <p className='text-gray-500'>{category}</p>
+          <Link to={`/product/${_id}`} className='text-xl'>{name}</Link>
+          <p className='text-gray-500 text-md'>{category.toUpperCase()} SHOES</p>
           <p className='text-lg'>${price}</p>
         </div>
+        <div></div>
       </div>
     </div>
   )

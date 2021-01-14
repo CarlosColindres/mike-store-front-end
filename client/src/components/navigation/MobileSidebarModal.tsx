@@ -1,7 +1,7 @@
 import type { FunctionComponent } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { ReduxStoreInterface } from '../../interfaces/reduxStoreInterfaces'
-
+import {Link} from 'react-router-dom'
 //actions 
 import {toggleRegisterModal, toggleLoginModal, toggleSidebar} from '../../redux/actions/modalStateActions'
 
@@ -17,15 +17,12 @@ const MobileSidebarModal: FunctionComponent = () => {
         <i className='fas fa-times'></i>
       </div>
       <nav className='flex flex-col text-3xl mb-12'>
-        <a className='mb-2' href='/shop'>
-          New Realeases
-        </a>
-        <a className='mb-2' href='/shop'>
+        <Link to={`/shop/men`} className='mb-2'>
           Men
-        </a>
-        <a className='mb-2' href='/shop'>
+        </Link>
+        <Link to={`/shop/men`} className='mb-2'>
           Women
-        </a>
+        </Link>
         <a className='' href='/shop'>
           Kids
         </a>
