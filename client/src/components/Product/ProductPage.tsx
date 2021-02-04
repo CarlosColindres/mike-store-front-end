@@ -1,5 +1,4 @@
 import type { FunctionComponent } from 'react'
-import SuggestionsCarousel from '../cart/SuggestionsCarousel'
 import ProductCardList from '../home-products/ProductCardList'
 import ProductDisplay from './ProductDisplay'
 import ProductInformation from './ProductInformation'
@@ -40,7 +39,9 @@ const ProductPage: FunctionComponent = () => {
 
   useEffect(() => {
     const fetchProduct = async (id: string) => {
-      const res = await fetch(`http://localhost:5000/api/products/shoe/${id}`)
+      const res = await fetch(
+        `https://mikestore23.herokuapp.com/api/products/shoe/${id}`
+      )
 
       const data = await res.json()
 
@@ -59,18 +60,11 @@ const ProductPage: FunctionComponent = () => {
         </div>
 
         <ProductInformation
-          description={product.description}
-          price={product.price}
-          category={product.category}
+          {...product}
         />
       </div>
       <h2 className='my-8 text-2xl'>You may also like</h2>
-      <div className='sm:hidden'>
-        <SuggestionsCarousel />
-      </div>
-      <div className='hidden sm:block'>
         <ProductCardList />
-      </div>
     </div>
   )
 }

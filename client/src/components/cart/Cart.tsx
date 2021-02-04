@@ -3,7 +3,6 @@ import {useSelector} from 'react-redux'
 import {ReduxStoreInterface} from '../../interfaces/reduxStoreInterfaces'
 //components
 import ProductCardList from '../home-products/ProductCardList'
-import SuggestionsCarousel from './SuggestionsCarousel'
 import CartProduct from './CartProduct'
 import CartSummary from './CartSummary'
 import IsMember from './IsMember'
@@ -29,12 +28,7 @@ const Cart: FunctionComponent = () => {
         </div>
       </div>
       <h2 className='my-8 text-2xl'>You may also like</h2>
-      <div className='sm:hidden'>
-        <SuggestionsCarousel />
-      </div>
-      <div className='hidden sm:block'>
         <ProductCardList />
-      </div>
     </div>
   )
 }

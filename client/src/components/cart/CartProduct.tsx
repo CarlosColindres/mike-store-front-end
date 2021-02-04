@@ -2,7 +2,7 @@ import type { FunctionComponent } from 'react'
 import { useDispatch } from 'react-redux'
 import {removeFromCart} from '../../redux/actions/cartStateActions'
 import type {ProductCart} from '../../interfaces/reduxStoreInterfaces'
-const CartProduct: FunctionComponent<ProductCart> = ({ id, category, image, price, name, quantity, size }) => {
+const CartProduct: FunctionComponent<ProductCart> = ({ _id, category, image, price, name, quantity, size }) => {
 
   const dispatch = useDispatch()
   return (
@@ -13,7 +13,7 @@ const CartProduct: FunctionComponent<ProductCart> = ({ id, category, image, pric
             <img className='w-full' src={image} alt={name} />
           </div>
           <div className='p-6'>
-            <h2>KD13</h2>
+            <h2>{ name}</h2>
             <p className='text-gray-500'>{category}</p>
             <p className='text-gray-500'>Size: {size}</p>
             <p className='text-gray-500 mb-1'>Quantity: {quantity}</p>
@@ -21,7 +21,7 @@ const CartProduct: FunctionComponent<ProductCart> = ({ id, category, image, pric
               onClick={() =>
                 dispatch(
                   removeFromCart({
-                    id,
+                    _id,
                     category,
                     image,
                     price,

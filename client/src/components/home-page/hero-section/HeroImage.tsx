@@ -8,7 +8,6 @@ const HeroImage: FunctionComponent = () => {
   const { hero } = homepage
 
   const windowSize = () => setwindowWidthSize(window.outerWidth)
-
   useEffect(() => {
     window.addEventListener('resize', windowSize)
 
@@ -19,11 +18,12 @@ const HeroImage: FunctionComponent = () => {
 
   return (
     <section className='px-4 mb-8 container max-w-screen-2xl mx-auto sm:text-white sm:relative'>
-      {windowWidthSize <= 640 ? (
-        <img className='w-full object-center' src={hero.img_mobile} alt='' />
-      ) : (
-        <img className='w-full' src={hero.img} alt='' />
-      )}
+        <img
+          className='w-full object-center'
+          src={windowWidthSize <= 640 ?hero.img_mobile : hero.img}
+          alt=''
+        />
+     
       <div className='sm:absolute sm:bottom-4 sm:left-10'>
         <h1 className='text-4xl font-bold'>{hero.title}</h1>
         <sub className='text-lg'>{hero.subtext}</sub>
