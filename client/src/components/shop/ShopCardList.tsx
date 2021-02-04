@@ -17,7 +17,7 @@ const ShopCardList: FunctionComponent = () => {
 
         const fetchCategories = async (category: string) => {
           const res = await fetch(
-            `http://localhost:5000/api/products/${category}`
+            `https://mikestore23.herokuapp.com/api/products/${category}`
           )
 
             const data = await res.json()

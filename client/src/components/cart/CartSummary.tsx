@@ -37,12 +37,12 @@ const CartSummary: FunctionComponent = () => {
           Checkout
         </button>
       </div>
-      {/*<div>
+      <div>
         <button className='bg-gray-300 rounded-full my-4 py-4 w-full font-bold'>
           <span className='text-blue-700'>Pay</span>
           <span className='text-blue-400'>Pal</span>
         </button>
-      </div>*/}
+      </div>
     </div>
   )
 }

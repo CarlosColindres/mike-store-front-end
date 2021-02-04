@@ -13,7 +13,7 @@ const Checkout: FunctionComponent = () => {
   const { cartLength } = useSelector((state: ReduxStoreInterface) => state.cart)
   const { push } = useHistory()
   if (cartLength === 0) {
-    push('/shop')
+    push('/')
   }
   return (
     <div className='mt-8 container max-w-screen-2xl mx-auto px-4'>

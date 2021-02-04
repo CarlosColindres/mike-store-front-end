@@ -6,7 +6,7 @@ export interface ModalState {
 
 export interface ProductCart {
   name: string
-  id: number
+  _id: string
   quantity: string
   image: string
   size: string
